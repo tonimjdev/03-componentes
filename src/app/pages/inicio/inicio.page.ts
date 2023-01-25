@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Componente {
-  icon: string;
-  name: string;
-  reditectTo: string;
-}
+import { Componente } from '../../interfaces/interfaces';
+import { Observable } from 'rxjs';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-inicio',
@@ -14,77 +11,12 @@ interface Componente {
 export class InicioPage implements OnInit {
 
 
-  componentes: Componente[] = [
-   {
-    icon: 'american-football-outline',
-    name: 'Action Sheet',
-    reditectTo: '/action-sheet'
-   }, 
-   {
-    icon: 'alert-circle-outline',
-    name: 'Alert',
-    reditectTo: '/alert'
-   }, 
-   {
-    icon: 'beaker-outline',
-    name: 'Avatar',
-    reditectTo: '/avatar'
-   } , 
-   {
-    icon: 'radio-button-off-outline',
-    name: 'Button',
-    reditectTo: '/button'
-   }, 
-   {
-    icon: 'card-outline',
-    name: 'Cards',
-    reditectTo: '/card'
-   }, 
-   {
-    icon: 'checkmark-circle-outline',
-    name: 'Checks',
-    reditectTo: '/check'
-   }, 
-   {
-    icon: 'calendar-outline',
-    name: 'DateTime',
-    reditectTo: '/date-time'
-   }, 
-   {
-    icon: 'car-outline',
-    name: 'Fab',
-    reditectTo: '/fab'
-   }, 
-   {
-    icon: 'grid-outline',
-    name: 'Grid',
-    reditectTo: '/grid'
-   }, 
-   {
-    icon: 'infinite-outline',
-    name: 'Infinite Scroll',
-    reditectTo: '/infinite'
-   }, 
-   {
-    icon: 'hammer-outline',
-    name: 'Input Forms',
-    reditectTo: '/input'
-   }, 
-   {
-    icon: 'list-outline',
-    name: 'List - Sliding',
-    reditectTo: '/list'
-   },
-   {
-    icon: 'reorder-three-outline',
-    name: 'List - Reorder',
-    reditectTo: '/list-reorder'
-   }
-  ];
+componentes!: Observable<Componente[]>;
 
-  constructor() { }
+  constructor( private dataService: DataService ) { }
 
   ngOnInit() {
+    this.componentes = this.dataService.getMenuOpts();
   }
 
 }
