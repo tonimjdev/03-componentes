@@ -1,0 +1,117 @@
+<app-header titulo="DateTime"></app-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+
+    <ion-list-header>
+      <ion-label>Datos de nacimiento</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Fecha de nacimiento</ion-label>
+    </ion-item>
+
+    <ion-accordion-group>
+      <ion-accordion value="start">
+        <ion-item slot="header">
+          <ion-label>{{fechaNacim | date }}</ion-label>
+          <ion-note slot="end" id="datetimeValue"></ion-note>
+        </ion-item>
+        <ion-datetime
+          (ionChange)="cambioFecha( $event )"
+          locale="es-ES"
+          [firstDayOfWeek]="1"
+          slot="content"
+          displayFormat="DD MMMM YYYY"
+          presentation="date"
+        ></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
+
+
+    <ion-list-header>
+      <ion-label>Restricciones</ion-label>
+    </ion-list-header>
+    <ion-accordion-group>
+      <ion-accordion value="start">
+        <ion-item slot="header">
+          <ion-label>Min y Max (2010-2050)</ion-label>
+          <ion-note slot="end" id="datetimeValue"></ion-note>
+        </ion-item>
+        <ion-datetime
+          slot="content"
+          locale="es-ES"
+          [firstDayOfWeek]="1"
+          min="2010-01-01"
+          max="2050-12-31"
+        ></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
+    <ion-accordion-group>
+      <ion-accordion value="start">
+        <ion-item slot="header">
+          <ion-label>Fin de semana off</ion-label>
+          <ion-note slot="end" id="datetimeValue"></ion-note>
+        </ion-item>
+        <ion-datetime
+          slot="content"
+          [isDateEnabled]="isWeekday"
+          locale="es-ES"
+          [firstDayOfWeek]="1"
+          min="2010"
+          max="2050"
+          presentation="date"
+        ></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
+    <ion-accordion-group>
+      <ion-accordion value="start">
+        <ion-item slot="header">
+          <ion-label>Mes y año: {{fecha | date:'MMMM-YYYY'}}</ion-label>
+          <ion-note slot="end" id="datetimeValue"></ion-note>
+        </ion-item>
+        <ion-datetime
+          (ionChange)="cambioFecha2( $event )"
+          slot="content"
+          [isDateEnabled]="isWeekday"
+          locale="es-ES"
+          [firstDayOfWeek]="1"
+          max="2050"
+          presentation="month-year"
+        ></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
+
+
+
+
+
+
+
+    <!-- <ion-list-header>
+      <ion-label>Datos de nacimiento</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Fecha de nacimiento</ion-label>
+      <ion-datetime
+      [value]="fechaNacim.toISOString()"
+      display-format="DD MMMM YYYY"
+      (ionChange)="cambioFecha( $event )"
+      ></ion-datetime>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>Restricciones</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Min y Max</ion-label>
+      <ion-datetime
+      display-format="DD MMMM YYYY"
+      ></ion-datetime>
+    </ion-item> -->
+
+
+  </ion-list>
+</ion-content>
