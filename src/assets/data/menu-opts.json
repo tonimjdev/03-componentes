@@ -98,5 +98,20 @@
       "icon": "copy-outline",
       "name": "Segment",
       "redirectTo": "/segment"
+    },
+    {
+      "icon": "albums-outline",
+      "name": "Slides",
+      "redirectTo": "/slides"
+    },
+    {
+      "icon": "cog-outline",
+      "name": "Tabs",
+      "redirectTo": "/tabs"
+    },
+    {
+      "icon": "pricetag-outline",
+      "name": "Toast",
+      "redirectTo": "/toast"
     }
   ]

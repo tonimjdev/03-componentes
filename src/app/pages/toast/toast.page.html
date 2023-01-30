@@ -1,0 +1,21 @@
+<app-header titulo="Toast"></app-header>
+
+<ion-content class="ion-padding">
+
+  <ion-button (click)="presentToast('top')" expand="block">
+    Present Toast At the Top
+  </ion-button>
+
+  <ion-button (click)="presentToast('middle')" expand="block">
+    Present Toast At the Middle
+  </ion-button>
+
+  <ion-button (click)="presentToast('bottom')" expand="block">
+    Present Toast At the Bottom
+  </ion-button>
+
+  <ion-button style="margin-top: 2em;"color="tertiary" (click)="presentToastWithOptions()" expand="block">
+    Present Toast With Options
+  </ion-button>
+
+</ion-content>
