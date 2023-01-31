@@ -8,12 +8,16 @@ import { SlidesPageRoutingModule } from './slides-routing.module';
 
 import { SlidesPage } from './slides.page';
 
+import { SwiperModule } from 'swiper/angular'; // Sustituye ionic-slide (deprecated)
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SlidesPageRoutingModule
+    SlidesPageRoutingModule,
+    SwiperModule
   ],
   declarations: [SlidesPage]
 })

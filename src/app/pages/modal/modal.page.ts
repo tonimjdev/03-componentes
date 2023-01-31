@@ -28,5 +28,6 @@ export class ModalPage implements OnInit {
     // Capturamos los argumentos que nos devuelve el modal al cerrar
     const resp = await modal.onDidDismiss();
     console.log(resp);
+    console.log(JSON.stringify(resp));
   }
 }
